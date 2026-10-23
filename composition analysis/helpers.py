@@ -340,7 +340,7 @@ def differentialAbundance(paper, sampleMetadata, outputDir):
         ancombcDisease = ancombc(table=paper.table,
                                 metadata=sampleMetadata,
                                 formula='Disease',
-                                reference_levels=f'Disease::{disease}',
+                                reference_levels=[f'Disease::{disease}'],
                                 p_adj_method='BH',
                                 alpha=0.001).differentials
         ancombcDisease.save(path.join(outputDir, f"{paper.name}-ref{disease}-ancombc.qza"))
